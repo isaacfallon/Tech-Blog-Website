@@ -1,7 +1,6 @@
 [
     {
-        "name": "Isaac",
-        "email": "isaac",
+        "user": "isaac",
         "password": "isaac123"
     }
 ]
