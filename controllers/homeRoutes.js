@@ -7,8 +7,13 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
-      // order: [['title', 'ASC']],
-    });
+      include: [
+        {
+          model: User,
+          attributes: ['user']
+        }
+      ]
+    })
 
     const posts = postData.map((project) => project.get({ plain: true }));
 
@@ -47,15 +52,23 @@ router.get('/signup', (req, res) => {
 
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-      order: [['user', 'ASC']],
-    });
 
-    const users = userData.map((project) => project.get({ plain: true }));
+    // Get the currently authenticated user's id
+
+    const postData = await Post.findAll({
+      where: { user_id: req.session.user_id },
+      include: [
+        {
+          model: User,
+          attributes: ['user']
+        }
+      ]
+    })
+
+    const posts = postData.map((project) => project.get({ plain: true }));
 
     res.render('dashboard', {
-      users,
+      posts,
       // TODO: Add a comment describing the functionality of this property
       // Gives handlebars access to the boolean variable from 'req.session.logged_in' to conditionally render whether the user is logged in
       logged_in: req.session.logged_in,
