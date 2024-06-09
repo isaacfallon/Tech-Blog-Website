@@ -1,8 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Post extends Model {
-}
+const currentDate = new Date();
+const formattedDate = `${new Date(currentDate).getDate()}/${new Date(currentDate).getMonth() + 1}/${new Date(currentDate).getFullYear()}`;
+
+class Post extends Model { }
 
 Post.init(
     {
@@ -19,6 +21,17 @@ Post.init(
         content: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        },
+        creationDate: {
+            type: DataTypes.STRING,
+            defaultValue: formattedDate,
         }
     },
     {
