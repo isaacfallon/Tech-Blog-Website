@@ -46,7 +46,7 @@ Next, you will need PostgreSQL installed on your computer to initialise the data
 
 To simply use the deployed application, visit a link to the website deployed on Render here:
 
-[www.google.com](https://www.google.com/)
+https://isaac-fallon-14-challenge-tech-blog.onrender.com/
 
 Otherwise, if you would prefer to host the application locally, follow the steps below:
 
