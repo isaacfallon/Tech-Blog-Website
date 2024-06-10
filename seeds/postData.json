@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "title": "title",
+        "content": "content",
+        "user_id": 1,
+        "creationDate": "10/06/24"
+    }
+]

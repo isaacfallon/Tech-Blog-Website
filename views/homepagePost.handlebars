@@ -1,3 +1,14 @@
 {{> post-details posts}}
 
-<script src="/js/postEdit.js"></script>
+
+
+<h3>Comments for this post:</h3>
+{{> comment-details posts.comments}}
+
+
+{{#if logged_in}}
+<input type="text" id="commentContent" placeholder="Add comment here">
+<button id="addComment" class="btn btn-primary" type="submit">Add comment</button>
+{{/if}}
+
+<script src="/js/addComment.js"></script>

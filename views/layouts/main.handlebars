@@ -4,39 +4,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tech Blog</title>
+  <title>Tech Blog by Isaac Fallon</title>
   <link rel="stylesheet" href="/css/jass.css">
 </head>
 
-<body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      Tech Blog
-    </h1>
-    <nav>
-      <button class="btn" id="home">Home</button>
-      <button class="btn" id="dashboard">Dashboard</button>
-      {{!-- If the user is logged in, create a nav button that says 'logout' --}}
-      {{#if logged_in}}
-      <button class="btn" id="logout">Logout</button>
-      {{else}}
-      <button class="btn" id="login">Login</button>
-    </nav>
-    {{/if}}
-  </header>
-  <main class="container container-fluid mt-5">
-    {{{ body }}}
-  </main>
-  <footer>
 
-  </footer>
-
-  {{!-- If the user is logged in, run this javascript file --}}
-  {{#if logged_in}}
-  <script src="/js/postLogin.js"></script>
-  {{else}}
-  <script src="/js/preLogin.js"></script>
+<header class="heading-container">
+  <h1>Tech Blog by Isaac Fallon</h1>
+  <nav>
+    <button class="btn" id="home">Home</button>
+    <button class="btn" id="dashboard">Dashboard</button>
+    {{!-- If the user is logged in, create a nav button that says 'logout' --}}
+    {{#if logged_in}}
+    <button class="btn" id="logout">Logout</button>
+    {{else}}
+    <button class="btn" id="login">Login</button>
+  </nav>
   {{/if}}
-</body>
+</header>
+
+{{{ body }}}
+
+<footer>
+
+</footer>
+
+{{!-- If the user is logged in, run this javascript file --}}
+{{#if logged_in}}
+<script src="/js/postLogin.js"></script>
+{{else}}
+<script src="/js/preLogin.js"></script>
+{{/if}}
+
 
 </html>
