@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// GET route to display all posts on the homepage
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -9,6 +10,14 @@ router.get('/', async (req, res) => {
         {
           model: User,
           attributes: ['user']
+        },
+        {
+          model: Comment,
+          attributes: ['id', 'commentContent', 'post_id', 'user_id'],
+          include: {
+            model: User,
+            attributes: ['user']
+          }
         }
       ]
     })
@@ -24,7 +33,9 @@ router.get('/', async (req, res) => {
   }
 });
 
+// GET route to render the login page 
 router.get('/login', (req, res) => {
+
   if (req.session.logged_in) {
     res.redirect('/');
     return;
@@ -33,11 +44,14 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// GET route to render the signup page
 router.get('/signup', (req, res) => {
 
   res.render('signup');
 });
 
+// GET route to render the dashboard page
+// Only allow this access if the user is logged in (via the 'withAuth' middleware utility)
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -64,17 +78,33 @@ router.get('/dashboard', withAuth, async (req, res) => {
 router.get('/posts/:id', async (req, res) => {
 
   try {
-      const postData = await Post.findByPk(req.params.id);
+    const postData = await Post.findOne({
+      where: { id: req.params.id },
+      include: [
+        {
+          model: User,
+          attributes: ['user']
+        },
+        {
+          model: Comment,
+          attributes: ['id', 'commentContent', 'post_id', 'user_id'],
+          include: {
+            model: User,
+            attributes: ['user']
+          }
+        }
+      ]
+    })
 
-      const posts = postData.get({ plain: true });
+    const posts = postData.get({ plain: true });
 
-      res.render('homepagePost', {
-          posts,
-          logged_in: req.session.logged_in,
-      });
+    res.render('homepagePost', {
+      posts,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
