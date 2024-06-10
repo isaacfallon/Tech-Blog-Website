@@ -1,0 +1,10 @@
+{{> post-details posts}}
+
+<form class="form editPost-form">
+    <input type="text" id="blogTitle" placeholder="{{posts.title}}">
+    <input type="text" id="blogContent" placeholder="{{posts.content}}">
+    <button id=" editPostButton" class="btn btn-primary" type="submit">Edit post</button>
+    <button id="deletePostButton" class="btn btn-primary">Delete post</button>
+</form>
+
+<script src="/js/postEdit.js"></script>

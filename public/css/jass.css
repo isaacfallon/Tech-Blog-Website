@@ -1,3 +1,39 @@
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+
+body {
+    position: relative;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    /* These two styles for the body ensure the footer remains at the bottom of the screen 
+    - even when scrolling is required when lots of blog entries are added. */
+    position: relative;
+    min-height: 100vh;
+}
+
 .form-popup {
     display: none;
+}
+
+.post-div {
+    border: 5px black solid;
+    padding: 1em;
+    margin: 1em 0;
+}
+
+button {
+    background-color: lightgrey;
+    border: none;
+    color: black;
+    padding: 0.75em;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.75em;
+    margin: 0.25em;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
 }
