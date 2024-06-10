@@ -7,7 +7,6 @@ button.addEventListener("click", function () {
 
 const addBlogPostHandler = async (event) => {
     event.preventDefault();
-    alert("hello")
 
     const title = document.querySelector('#blogTitle').value.trim();
     const content = document.querySelector('#blogContent').value.trim();
@@ -25,6 +24,7 @@ const addBlogPostHandler = async (event) => {
         //     alert('Failed to add post.');
         // }
     }
+    location.reload();
 };
 
 document.querySelector('.addPost-form').addEventListener('submit', addBlogPostHandler);

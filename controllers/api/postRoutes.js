@@ -23,4 +23,37 @@ router.post('/', async (req, res) => {
     }
 });
 
+// UPDATE a blog post
+router.put('/:id', async (req, res) => {
+    try {
+        const postData = Post.update({
+            title: req.body.title,
+            content: req.body.content,
+        }, {
+            where: {
+                id: req.params.id,
+            },
+        });
+        res.json(postData);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+// DELETE a blog post
+router.delete('/:id', async (req, res) => {
+    try {
+        const deletedPost = await Post.destroy({
+            where: {
+                id: req.params.id,
+            },
+        });
+        res.status(200).json(deletedPost);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
