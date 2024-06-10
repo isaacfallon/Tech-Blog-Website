@@ -1,5 +1,18 @@
-<h2>Dashboard</h2>
-<h3>Click on any of your submitted posts below to edit its details or delete it.</h3>
+<h2>Dashboard - Click on any of your submitted posts below to edit its details or delete it.</h2>
+
+<button id="addPost" class="btn btn-primary" type="submit">Add a new post</button>
+
+<div class="form-popup" id="popUpForm">
+    <form class="addPost-form">
+        <div class="input-container ic1">
+            <input type="text" class="input" id="blogTitle" placeholder="Title">
+        </div>
+        <div class="input-container ic2">
+            <input type="text" class="input" id="blogContent" placeholder="Content">
+        </div>
+        <button id="addPostButton" class="btn btn-primary" type="submit">Add post</button>
+    </form>
+</div>
 
 {{#each posts as |post| }}
 <a href="/dashboard/posts/{{id}}">
@@ -14,15 +27,5 @@
     </div>
 </a>
 {{/each}}
-
-<button id="addPost" class="btn btn-primary" type="submit">Add a new post</button>
-
-<div class="form-popup" id="popUpForm">
-    <form class="form addPost-form">
-        <input type="text" id="blogTitle" placeholder="Title">
-        <input type="text" id="blogContent" placeholder="Content">
-        <button id="addPostButton" class="btn btn-primary" type="submit">Add post</button>
-    </form>
-</div>
 
 <script src="/js/dashboard.js"></script>

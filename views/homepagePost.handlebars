@@ -1,14 +1,26 @@
 {{> post-details posts}}
 
 
-
-<h3>Comments for this post:</h3>
-{{> comment-details posts.comments}}
-
-
 {{#if logged_in}}
-<input type="text" id="commentContent" placeholder="Add comment here">
-<button id="addComment" class="btn btn-primary" type="submit">Add comment</button>
+{{!-- <div class="comment-form">
+    <input type="text" class="input" id="commentContent" placeholder="Add comment here">
+    <button id="addComment" class="btn btn-primary" type="submit">Add comment</button>
+</div> --}}
+
+<div class="comment-form">
+    <div class="subtitle">Add a comment to this blog post:</div>
+    <div class="input-container ic1">
+        <input id="commentContent" class="input" type="text" placeholder="Add comment here" />
+    </div>
+    <button id="addComment" class="btn btn-primary" type="submit">Add comment</button>
+</div>
+
 {{/if}}
+
+<div id="comment-div">
+    <h3>Comments for this post:</h3>
+    {{> comment-details posts.comments}}
+</div>
+
 
 <script src="/js/addComment.js"></script>
