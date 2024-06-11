@@ -1,3 +1,5 @@
+// Routes file to handle posts
+
 const router = require('express').Router();
 const { Post, User } = require('../../models');
 

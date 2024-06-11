@@ -1,7 +1,10 @@
+// Routes file to handle dashboard logic
+
 const router = require('express').Router();
 const { User, Post } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Route to display posts from the users dashboard (only when logged in)
 router.get('/posts/:id', async (req, res) => {
 
     try {

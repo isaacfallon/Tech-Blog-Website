@@ -1,3 +1,5 @@
+// Index model file to handle the relational logic between the user, post and comment models
+
 const User = require('./user');
 const Post = require('./post');
 const Comment = require('./comment');

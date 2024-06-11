@@ -1,3 +1,5 @@
+// Routes file to handle user data
+
 const router = require('express').Router();
 const { User } = require('../../models');
 
@@ -21,11 +23,9 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Login
+// LOGIN route for the user 
 router.post('/login', async (req, res) => {
   try {
-    // TODO: Add a comment describing the functionality of this expression
-    // Searching for the user's one username that matches
     const userData = await User.findOne({ where: { user: req.body.user } });
 
     if (!userData) {
@@ -35,8 +35,6 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    // TODO: Add a comment describing the functionality of this expression
-    // Checks the user's password is matching the associated username
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -46,8 +44,6 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    // TODO: Add a comment describing the functionality of this method
-    // When the request is made, save the session so that the user stays logged in
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
@@ -60,10 +56,9 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// LOGOUT route for the user 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
-    // TODO: Add a comment describing the functionality of this method
-    // Ends/destroys the stored session when the user logs out
     req.session.destroy(() => {
       res.status(204).end();
     });

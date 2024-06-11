@@ -4,25 +4,22 @@
         
 ## Description
             
-This project is an Tech Blog full stack application which follows the MVC (Model–view–controller) paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
+This project is a full-stack Tech Blog application which follows the MVC (Model–view–controller) paradigm in its architectural structure. It uses Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
-I built this application as a platform for people to discuss technology in a 'blog' style format. The collaborative nature of the application allows uses to engage in multiple threads of discussion, thus creating a feeling of community. 
+I built this application as a platform for people to discuss technology in a 'blog' style format. The collaborative nature of the application allows uses to engage in multiple threads of discussion which creates a community feeling. 
 
 By completing this project, I now understand how to create a full stack application from scratch which has increased my confidence and expertise for other projects going forward. 
 
 ### Screenshots of the application's UI (User Interface):
 
-- The application's home page:
-![Screenshot showing the application's home page]()
+- The application's home page with one example blog post:
+![Screenshot showing the application's home page](./assets/14-Challenge-Tech-Blog_Homepage.png)
 
-- A user logging in
-![Screenshot showing a user logging in]()
+- The log in form (the sign up form is identical):
+![Screenshot showing a user logging in](./assets/14-Challenge-Tech-Blog_Login.png)
 
-- A user adding a blog post
-![Screenshot showing a user adding a blog post]()
-
-- A user contributing to an existing blog post
-![Screenshot showing a user contributing to an existing blog post]()
+- Adding a comment to an existing post (if the user is logged in):
+![Screenshot showing a user adding a comment to a blog post](./assets/14-Challenge-Tech-Blog_Post-content.png)
             
 ## Table of Contents
             
@@ -92,7 +89,12 @@ SOFTWARE.
             
 ## Contributing
 
-N/A
+To obtain the id number of a specific post in order to edit it via a PUT request, I referenced the answer provided by 'Jose Gonzalez' in [this Stack Overflow question](https://stackoverflow.com/questions/6888783/split-path-name-to-get-routing-parameter) asked by user Eslam Soliman. 
+
+![Screenshot of StackOverflow answer showing how to split a pathname into a usable ID](./assets/StackOverflow-Answer_path-name-into-routing-parameter_by-Eslam-Soliman.png)
+
+This code is used in the file postEdit.js located [here in the folder Public/js](./public/js/). 
+
             
 ## Tests
 

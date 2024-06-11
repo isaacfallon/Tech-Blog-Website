@@ -1,3 +1,5 @@
+// JS file to handle the logic for logging in
+
 const loginFormHandler = async (event) => {
 
     event.preventDefault();
@@ -24,5 +26,3 @@ const loginFormHandler = async (event) => {
 document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
-
-// document.querySelector('#home').addEventListener('click', homeButton);
