@@ -1,3 +1,5 @@
+// Index file to connect api folder and other routes
+
 const router = require('express').Router();
 
 const apiRoutes = require('./api');

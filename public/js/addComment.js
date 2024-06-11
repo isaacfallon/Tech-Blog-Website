@@ -1,3 +1,5 @@
+// JS file to handle the logic for adding a comment
+
 async function addCommentHandler(event) {
     event.preventDefault();
 

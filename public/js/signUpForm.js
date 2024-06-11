@@ -1,3 +1,5 @@
+// JS file to handle the logic for how a user can sign up
+
 const signupFormHandler = async (event) => {
     event.preventDefault();
 

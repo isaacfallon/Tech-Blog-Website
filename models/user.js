@@ -1,3 +1,5 @@
+// Model file for user structure
+
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');

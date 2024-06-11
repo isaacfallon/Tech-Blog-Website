@@ -1,8 +1,10 @@
+// Routes file to handle comments
+
 const router = require('express').Router();
 const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-//Get all comments
+// GET all comments
 router.get('/', async (req, res) => {
     try {
         const commentData = await Comment.findAll();
@@ -16,7 +18,7 @@ router.get('/', async (req, res) => {
 
 });
 
-// CREATE new comment
+// CREATE a new comment
 router.post('/', async (req, res) => {
     try {
         const commentData = await Comment.create({
@@ -34,23 +36,19 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.delete('/:id', (req, res) => {
-    Comment.destroy({
-        where: {
-            id: req.params.id
-        }
-    })
-        .then(dbCommentData => {
-            if (!dbCommentData) {
-                res.status(404).json({ message: 'No comment found with this id!' });
-                return;
-            }
-            res.json(dbCommentData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+// DELETE a comment based on its ID
+// router.delete('/:id', (req, res) => {
+//     try {
+//         const deletedComment = Comment.destroy({
+//             where: {
+//                 id: req.params.id
+//             }
+//         });
+//         res.status(200).json(deletedComment);
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).json(err);
+//     }
+// });
 
 module.exports = router;

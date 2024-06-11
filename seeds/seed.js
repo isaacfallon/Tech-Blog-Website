@@ -1,3 +1,5 @@
+// Master seed file to populate the database with some simple content when run
+
 const sequelize = require('../config/connection');
 const { User, Post, Comment } = require('../models');
 

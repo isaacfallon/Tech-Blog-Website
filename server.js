@@ -1,3 +1,5 @@
+// Main server file to run the application 
+
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -7,9 +9,6 @@ const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 
-// TODO: Add a comment describing the functionality of this expression
-// Expands our session functionality so it can be stored
-// This allows us to guard against server failures (which will happen at some point)
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
@@ -17,8 +16,6 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
-// TODO: Add a comment describing the functionality of this object
-// Hides the cookie and stores it in a table so the user's details are saved for future use
 const sess = {
   secret: 'Super secret secret',
   cookie: {},
@@ -29,8 +26,6 @@ const sess = {
   })
 };
 
-// TODO: Add a comment describing the functionality of this statement
-// Telling express to use the session as middleware (makes express 'session aware')
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);

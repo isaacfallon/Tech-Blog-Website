@@ -1,3 +1,5 @@
+// JS file to handle the logic for editing a post
+
 const editBlogPostHandler = async (event) => {
     event.preventDefault();
 

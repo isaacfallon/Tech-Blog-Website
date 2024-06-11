@@ -1,3 +1,5 @@
+// Model file for comment structure
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 

@@ -1,3 +1,5 @@
+// JS file to handle the logic for before the user has logged in (can either go to the homepage, otherwise force them to go to the login screen)
+
 const loginButton = async () => {
     document.location.replace('/login');
 };
