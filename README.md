@@ -19,7 +19,7 @@ By completing this project, I now understand how to create a full stack applicat
 ![Screenshot showing a user logging in](./assets/14-Challenge-Tech-Blog_Login.png)
 
 - Adding a comment to a post (only if the user is logged in):
-![Screenshot showing a user adding a comment to a blog post](./assets/14-Challenge-Tech-Blog_Post-content.png)
+![Screenshot showing a user adding a comment to a blog post](./assets/14-Challenge-Tech-Blog_Post-content2.png)
             
 ## Table of Contents
             
