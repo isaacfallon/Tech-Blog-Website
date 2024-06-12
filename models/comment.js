@@ -19,7 +19,6 @@ Comment.init(
         commentContent: {
             type: DataTypes.STRING,
             allowNull: false,
-            defaultValue: "test comment"
         },
         post_id: {
             type: DataTypes.INTEGER,
