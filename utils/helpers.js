@@ -1,1 +1,1 @@
-// Test file for some utilities throughout development
+// Test file for utilities used throughout development

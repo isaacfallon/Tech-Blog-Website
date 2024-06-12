@@ -1,6 +1,5 @@
 // JS file to handle the logic for adding a post from the dashboard page
 
-let popUpForm = document.getElementById("popUpForm");
 let button = document.getElementById("addPost");
 
 button.addEventListener("click", function () {
@@ -19,8 +18,14 @@ const addBlogPostHandler = async (event) => {
             body: JSON.stringify({ title, content }),
             headers: { 'Content-Type': 'application/json' },
         });
+
+        if (response.ok) {
+            document.location.reload();
+
+        } else {
+            alert(`Failed to add post.`);
+        }
     }
-    location.reload();
 };
 
 document.querySelector('.addPost-form').addEventListener('submit', addBlogPostHandler);
