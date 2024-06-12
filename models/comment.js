@@ -34,7 +34,7 @@ Comment.init(
                 key: 'id'
             }
         },
-        creationDate: {
+        commentDate: {
             type: DataTypes.STRING,
             defaultValue: formattedDate,
         }

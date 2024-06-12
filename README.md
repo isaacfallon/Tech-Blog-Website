@@ -15,11 +15,11 @@ By completing this project, I now understand how to create a full stack applicat
 - The application's home page with one example blog post:
 ![Screenshot showing the application's home page](./assets/14-Challenge-Tech-Blog_Homepage.png)
 
-- The log in form (the sign up form is identical):
+- The log in form (the sign up form is identical and accessed by clicking the link at the bottom):
 ![Screenshot showing a user logging in](./assets/14-Challenge-Tech-Blog_Login.png)
 
-- Adding a comment to an existing post (if the user is logged in):
-![Screenshot showing a user adding a comment to a blog post](./assets/14-Challenge-Tech-Blog_Post-content.png)
+- Adding a comment to a post (only if the user is logged in):
+![Screenshot showing a user adding a comment to a blog post](./assets/14-Challenge-Tech-Blog_Post-content2.png)
             
 ## Table of Contents
             
