@@ -1,31 +1,27 @@
 // JS file to handle the logic for adding a comment
 
-async function addCommentHandler(event) {
+const addCommentHandler = async (event) => {
     event.preventDefault();
 
     const post_id = window.location.pathname.split('/')[2];
-
     const commentContent = document.querySelector('#commentContent').value.trim();
 
-    const currentDate = new Date();
-    const creationDate = `${new Date(currentDate).getDate()}/${new Date(currentDate).getMonth() + 1}/${new Date(currentDate).getFullYear()}`;
-
     if (commentContent) {
-        const response = await fetch('/api/comments', {
+
+        const response = await fetch(`/api/comments`, {
             method: 'POST',
-            body: JSON.stringify({
-                post_id,
-                commentContent,
-                creationDate
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            body: JSON.stringify({ commentContent, post_id }),
+            headers: { 'Content-Type': 'application/json' },
         });
 
-        document.location.reload();
+        if (response.ok) {
+            document.location.reload();
 
+        } else {
+            alert(`Failed to add comment`);
+        }
     }
-}
 
-document.querySelector('#addComment').addEventListener('click', addCommentHandler);
+};
+
+document.querySelector('.comment-form').addEventListener('submit', addCommentHandler);

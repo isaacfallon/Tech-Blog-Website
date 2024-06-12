@@ -19,7 +19,6 @@ Comment.init(
         commentContent: {
             type: DataTypes.STRING,
             allowNull: false,
-            defaultValue: "test comment"
         },
         post_id: {
             type: DataTypes.INTEGER,
@@ -35,7 +34,7 @@ Comment.init(
                 key: 'id'
             }
         },
-        creationDate: {
+        commentDate: {
             type: DataTypes.STRING,
             defaultValue: formattedDate,
         }
