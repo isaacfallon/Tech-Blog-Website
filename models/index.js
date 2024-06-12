@@ -15,21 +15,25 @@ Post.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
+// Comments belong to the user
 Comment.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
 });
 
+// A user can have many comments
 User.hasMany(Comment, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
 });
 
+// Comments also belong to the post
 Comment.belongsTo(Post, {
     foreignKey: 'post_id',
     onDelete: 'CASCADE',
 });
 
+// Posts can have many comments
 Post.hasMany(Comment, {
     foreignKey: 'post_id',
     onDelete: 'CASCADE',
