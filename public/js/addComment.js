@@ -10,8 +10,10 @@ const addCommentHandler = async (event) => {
 
         const response = await fetch(`/api/comments`, {
             method: 'POST',
-            body: JSON.stringify({ commentContent, post_id }),
-            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ post_id, commentContent }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
 
         if (response.ok) {

@@ -25,7 +25,6 @@ router.post('/', async (req, res) => {
             commentContent: req.body.commentContent,
             post_id: req.body.post_id,
             user_id: req.session.user_id,
-            commentDate: req.body.commentDate,
         });
 
         res.status(200).json(commentData);
