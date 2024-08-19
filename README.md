@@ -10,7 +10,12 @@ I built this application as a platform for people to discuss technology in a 'bl
 
 By completing this project, I now understand how to create a full stack application from scratch which has increased my confidence and expertise for other projects going forward. 
 
-### Screenshots of the application's UI (User Interface):
+### Demonstration:
+
+#### Video walkthrough:
+To view a live demonstration of how the application works, [please watch this video](https://drive.google.com/file/d/1c32w35f-MP1BgwWfcTk4s8tSBrYJLgwf/view) which goes through the steps of signing up and adding, editing and deleting a post. 
+
+#### Screenshots
 
 - The application's home page with one example blog post:
 ![Screenshot showing the application's home page](./assets/14-Challenge-Tech-Blog_Homepage.png)
@@ -41,11 +46,7 @@ Next, you will need PostgreSQL installed on your computer to initialise the data
             
 ## Usage
 
-To simply use the deployed application, visit a link to the website deployed on Render here:
-
-https://isaac-fallon-14-challenge-tech-blog.onrender.com/
-
-Otherwise, if you would prefer to host the application locally, follow the steps below:
+If you would like to host the application locally, follow the steps below:
 
 Once all of the steps in [Installation](#installation) have been completed, you will firstly need to initialise the 'blog_db' database and seed data into it. To do so, enter the following commands once navigated to the project folder in your terminal:
 
